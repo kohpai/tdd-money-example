@@ -1,5 +1,7 @@
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
+import kotlin.test.assertFalse
 
 class MoneyTest {
     @Test
@@ -9,5 +11,11 @@ class MoneyTest {
         assertEquals(10, product.amount)
         product = five.times(3)
         assertEquals(15, product.amount)
+    }
+
+    @Test
+    fun testEquality() {
+        assertTrue { Dollar(5) == Dollar(5) }
+        assertFalse { Dollar(5) == Dollar(6) }
     }
 }
