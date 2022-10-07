@@ -4,10 +4,10 @@
 
 - $5 + 10 CHF = $10 if rage is 2:1
 - ~~$5 * 2 = $10~~
-- Make `amount` private
+- ~~**Make `amount` private**~~
 - ~~Dollar side effects?~~
 - Money rounding?
-- ~~**equals()**~~
+- ~~equals()~~
 - hashCode()
 - Equal null
 - Equal object
