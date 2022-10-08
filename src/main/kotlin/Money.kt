@@ -1,7 +1,7 @@
 // By default, Kotlin classes are final – they can't be inherited. To make a
 // class inheritable, mark it with the open keyword
 open class Money(
-    private val amount: Int,
+    val amount: Int,
     private val currency: String
 ) : Expression {
     companion object {
@@ -13,8 +13,8 @@ open class Money(
 
     fun currency() = currency
 
-    operator fun plus(addend: Money): Expression =
-        Money(amount + addend.amount, "USD")
+    operator fun plus(addend: Money): Expression = Sum(this, addend)
+    override fun reduce(to: String) = this
 
     override fun equals(other: Any?): Boolean {
         val money = other as Money

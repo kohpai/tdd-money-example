@@ -1,3 +1,3 @@
 class Bank {
-    fun reduce(expression: Expression, currency: String) = Money.dollar(10)
+    fun reduce(expression: Expression, to: String) = expression.reduce(to)
 }
