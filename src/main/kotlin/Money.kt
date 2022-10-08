@@ -9,7 +9,7 @@ open class Money(
         fun franc(amount: Int): Money = Money(amount, "CHF")
     }
 
-    operator fun times(multiplier: Int): Expression =
+    override operator fun times(multiplier: Int): Expression =
         Money(amount * multiplier, currency)
 
     fun currency() = currency
