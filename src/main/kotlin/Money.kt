@@ -14,7 +14,8 @@ open class Money(
     fun currency() = currency
 
     operator fun plus(addend: Money): Expression = Sum(this, addend)
-    override fun reduce(to: String) = this
+    override fun reduce(bank: Bank, to: String) =
+        Money(amount / bank.rate(currency, to)!!, to)
 
     override fun equals(other: Any?): Boolean {
         val money = other as Money
