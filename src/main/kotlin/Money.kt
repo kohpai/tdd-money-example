@@ -9,7 +9,7 @@ open class Money(
         fun franc(amount: Int): Money = Money(amount, "CHF")
     }
 
-    fun times(multiplier: Int) = Money(amount * multiplier, currency)
+    operator fun times(multiplier: Int) = Money(amount * multiplier, currency)
 
     fun currency() = currency
 
