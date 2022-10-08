@@ -4,12 +4,12 @@
 
 - ~~$5 + 10 CHF = $10 if rage is 2:1~~
 - ~~$5 + $5 = $10~~
-- Return Money from 5+5
+- ~~**Return Money from 5+5**~~
 - ~~Bank.reduce(Money)~~
 - ~~Reduce Money with conversion~~
 - ~~Reduce(Bank, String)~~
 - ~~Sum.plus()~~
-- ~~**Expression.times()**~~
+- ~~Expression.times()~~
 - ~~$5 * 2 = $10~~
 - ~~Make `amount` private~~
 - ~~Dollar side effects?~~

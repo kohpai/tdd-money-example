@@ -107,4 +107,10 @@ class MoneyTest {
         val result = bank.reduce(product, "USD")
         assertEquals(Money.dollar(20), result)
     }
+
+//    @Test
+//    fun testPlusSameCurrencyReturnsMoney() {
+//        val sum = Money.dollar(1) + Money.dollar(1)
+//        assertTrue { sum is Money }
+//    }
 }
