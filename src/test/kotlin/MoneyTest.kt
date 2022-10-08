@@ -20,6 +20,7 @@ class MoneyTest {
         assertFalse { Money.dollar(5) == Money.franc(5) }
     }
 
+    @Test
     fun testFrancMultiplication() {
         val five = Money.franc(5)
         assertEquals(Money.franc(10), five.times(2))
