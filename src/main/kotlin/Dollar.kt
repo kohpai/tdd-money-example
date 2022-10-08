@@ -5,6 +5,6 @@
 // to delegate to another constructor which does. Note that in this case
 // different secondary constructors can call different constructors of the base
 // type
-class Dollar(amount: Int): Money(amount) {
-    fun times(multiplier: Int) = Dollar(amount * multiplier)
+class Dollar(amount: Int) : Money(amount) {
+    override fun times(multiplier: Int): Money = Dollar(amount * multiplier)
 }
