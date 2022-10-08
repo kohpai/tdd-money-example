@@ -9,11 +9,14 @@ open class Money(
         fun franc(amount: Int): Money = Money(amount, "CHF")
     }
 
-    operator fun times(multiplier: Int) = Money(amount * multiplier, currency)
+    operator fun times(multiplier: Int): Expression =
+        Money(amount * multiplier, currency)
 
     fun currency() = currency
 
-    operator fun plus(addend: Money): Expression = Sum(this, addend)
+    override operator fun plus(addend: Expression): Expression =
+        Sum(this, addend)
+
     override fun reduce(bank: Bank, to: String) =
         Money(amount / bank.rate(currency, to)!!, to)
 
