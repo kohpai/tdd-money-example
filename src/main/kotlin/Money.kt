@@ -4,14 +4,14 @@ open class Money(
     private val amount: Int,
     private val currency: String
 ) {
-    fun times(multiplier: Int) = Money(amount * multiplier, currency)
-
-    fun currency() = currency
-
     companion object {
         fun dollar(amount: Int): Money = Money(amount, "USD")
         fun franc(amount: Int): Money = Money(amount, "CHF")
     }
+
+    fun times(multiplier: Int) = Money(amount * multiplier, currency)
+
+    fun currency() = currency
 
     override fun equals(other: Any?): Boolean {
         val money = other as Money
