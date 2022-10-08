@@ -3,7 +3,7 @@
 open class Money(
     private val amount: Int,
     private val currency: String
-) {
+) : Expression {
     companion object {
         fun dollar(amount: Int): Money = Money(amount, "USD")
         fun franc(amount: Int): Money = Money(amount, "CHF")
@@ -12,6 +12,9 @@ open class Money(
     fun times(multiplier: Int) = Money(amount * multiplier, currency)
 
     fun currency() = currency
+
+    operator fun plus(addend: Money): Expression =
+        Money(amount + addend.amount, "USD")
 
     override fun equals(other: Any?): Boolean {
         val money = other as Money
