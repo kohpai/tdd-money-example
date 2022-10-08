@@ -85,4 +85,15 @@ class MoneyTest {
         val result = bank.reduce(fiveBucks + tenFrancs, "USD")
         assertEquals(Money.dollar(10), result)
     }
+
+    @Test
+    fun testSumPlusMoney() {
+        val fiveBucks: Expression = Money.dollar(5)
+        val tenFrancs: Expression = Money.franc(10)
+        val bank = Bank()
+        bank.addRate("CHF", "USD", 2)
+        val sum = (fiveBucks + tenFrancs) + fiveBucks
+        val result = bank.reduce(sum, "USD")
+        assertEquals(Money.dollar(15), result)
+    }
 }
